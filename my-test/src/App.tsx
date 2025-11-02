@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import Modal01 from "./modules/aquaculture/Modal01"
+// import Modal01 from "./modules/aquaculture/Modal01"
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -7,7 +7,8 @@ function App() {
   return (
     <>
       <div>
-        <Modal01/>
+        {/* <Modal01/> */}
+        <h1>WELCOME</h1>
       </div>  
     </>
   )

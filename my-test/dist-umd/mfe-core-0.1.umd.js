@@ -51,7 +51,8 @@
     return jsxRuntime.exports;
   }
   var jsxRuntimeExports = requireJsxRuntime();
-  const Modal01 = () => {
+  const Modal01 = ({ runQuery, model, updateModel }) => {
+    console.log(`runQuery, model, updateModel == ${runQuery}, ${model}, ${updateModel}`);
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "30vw", height: "20vh", background: "#ccc", padding: 20, margin: "10%", border: "1px solid #ccc" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "WELCOME TO THE WORLD!!!" }) });
   };
   const index = { React, ReactDOM, Modal01 };

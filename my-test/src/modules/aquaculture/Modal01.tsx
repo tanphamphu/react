@@ -21,8 +21,13 @@
 //   updateModel?: (payload: { body: Record<string, any> }) => void;
 // }) {
 
-const Modal01 = ()=>{
-  // console.log(FORM_DATA);
+const Modal01 = (
+  { runQuery, model, updateModel }:{
+    runQuery?:(query: any)=>void;
+    model: Record<string, any>;
+    updateModel?:(payload: any)=>void
+  })=>{
+  console.log(`runQuery, model, updateModel == ${runQuery}, ${model}, ${updateModel}`);
   // const handleSave = () => runQuery(model.query);
   // const RENDER1 = <Form formData={FORM_DATA}/>
 
