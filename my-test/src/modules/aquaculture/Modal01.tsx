@@ -21,7 +21,7 @@
 //   updateModel?: (payload: { body: Record<string, any> }) => void;
 // }) {
 
-const Modal01 = (
+export const Modal01 = (
   { runQuery, model, updateModel }:{
     runQuery?:(query: any)=>void;
     model: Record<string, any>;
@@ -52,4 +52,4 @@ const Modal01 = (
 
 }
 
-export default Modal01; 
+// export default Modal01; 
