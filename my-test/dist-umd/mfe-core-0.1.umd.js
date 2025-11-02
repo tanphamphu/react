@@ -1,9 +1,68 @@
-(function(S,N){typeof exports=="object"&&typeof module<"u"?N(exports,require("react"),require("react-dom")):typeof define=="function"&&define.amd?define(["exports","react","react-dom"],N):(S=typeof globalThis<"u"?globalThis:S||self,N(S.MFECore={},S.React,S.ReactDOM))})(this,(function(S,N,ne){"use strict";function se(j){return j&&j.__esModule&&Object.prototype.hasOwnProperty.call(j,"default")?j.default:j}var Z={exports:{}},A={};/**
- * @license React
- * react-jsx-runtime.production.js
- *
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */var X;function ae(){if(X)return A;X=1;var j=Symbol.for("react.transitional.element"),L=Symbol.for("react.fragment");function O(_,y,M){var x=null;if(M!==void 0&&(x=""+M),y.key!==void 0&&(x=""+y.key),"key"in y){M={};for(var h in y)h!=="key"&&(M[h]=y[h])}else M=y;return y=M.ref,{$$typeof:j,type:_,key:x,ref:y!==void 0?y:null,props:M}}return A.Fragment=L,A.jsx=O,A.jsxs=O,A}var K;function ie(){return K||(K=1,Z.exports=ae()),Z.exports}var $=ie(),J={exports:{}},ue=J.exports,ee;function oe(){return ee||(ee=1,(function(j,L){(function(O,_){j.exports=_()})(ue,(function(){var O=1e3,_=6e4,y=36e5,M="millisecond",x="second",h="minute",k="hour",b="day",P="week",p="month",I="quarter",w="year",T="date",s="Invalid Date",d=/^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/,B=/\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,me={name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_"),ordinal:function(a){var r=["th","st","nd","rd"],e=a%100;return"["+a+(r[(e-20)%10]||r[e]||r[0])+"]"}},G=function(a,r,e){var n=String(a);return!n||n.length>=r?a:""+Array(r+1-n.length).join(e)+a},$e={s:G,z:function(a){var r=-a.utcOffset(),e=Math.abs(r),n=Math.floor(e/60),t=e%60;return(r<=0?"+":"-")+G(n,2,"0")+":"+G(t,2,"0")},m:function a(r,e){if(r.date()<e.date())return-a(e,r);var n=12*(e.year()-r.year())+(e.month()-r.month()),t=r.clone().add(n,p),i=e-t<0,u=r.clone().add(n+(i?-1:1),p);return+(-(n+(e-t)/(i?t-u:u-t))||0)},a:function(a){return a<0?Math.ceil(a)||0:Math.floor(a)},p:function(a){return{M:p,y:w,w:P,d:b,D:T,h:k,m:h,s:x,ms:M,Q:I}[a]||String(a||"").toLowerCase().replace(/s$/,"")},u:function(a){return a===void 0}},q="en",R={};R[q]=me;var te="$isDayjsObject",Q=function(a){return a instanceof z||!(!a||!a[te])},U=function a(r,e,n){var t;if(!r)return q;if(typeof r=="string"){var i=r.toLowerCase();R[i]&&(t=i),e&&(R[i]=e,t=i);var u=r.split("-");if(!t&&u.length>1)return a(u[0])}else{var c=r.name;R[c]=r,t=c}return!n&&t&&(q=t),t||!n&&q},f=function(a,r){if(Q(a))return a.clone();var e=typeof r=="object"?r:{};return e.date=a,e.args=arguments,new z(e)},o=$e;o.l=U,o.i=Q,o.w=function(a,r){return f(a,{locale:r.$L,utc:r.$u,x:r.$x,$offset:r.$offset})};var z=(function(){function a(e){this.$L=U(e.locale,null,!0),this.parse(e),this.$x=this.$x||e.x||{},this[te]=!0}var r=a.prototype;return r.parse=function(e){this.$d=(function(n){var t=n.date,i=n.utc;if(t===null)return new Date(NaN);if(o.u(t))return new Date;if(t instanceof Date)return new Date(t);if(typeof t=="string"&&!/Z$/i.test(t)){var u=t.match(d);if(u){var c=u[2]-1||0,l=(u[7]||"0").substring(0,3);return i?new Date(Date.UTC(u[1],c,u[3]||1,u[4]||0,u[5]||0,u[6]||0,l)):new Date(u[1],c,u[3]||1,u[4]||0,u[5]||0,u[6]||0,l)}}return new Date(t)})(e),this.init()},r.init=function(){var e=this.$d;this.$y=e.getFullYear(),this.$M=e.getMonth(),this.$D=e.getDate(),this.$W=e.getDay(),this.$H=e.getHours(),this.$m=e.getMinutes(),this.$s=e.getSeconds(),this.$ms=e.getMilliseconds()},r.$utils=function(){return o},r.isValid=function(){return this.$d.toString()!==s},r.isSame=function(e,n){var t=f(e);return this.startOf(n)<=t&&t<=this.endOf(n)},r.isAfter=function(e,n){return f(e)<this.startOf(n)},r.isBefore=function(e,n){return this.endOf(n)<f(e)},r.$g=function(e,n,t){return o.u(e)?this[n]:this.set(t,e)},r.unix=function(){return Math.floor(this.valueOf()/1e3)},r.valueOf=function(){return this.$d.getTime()},r.startOf=function(e,n){var t=this,i=!!o.u(n)||n,u=o.p(e),c=function(Y,g){var C=o.w(t.$u?Date.UTC(t.$y,g,Y):new Date(t.$y,g,Y),t);return i?C:C.endOf(b)},l=function(Y,g){return o.w(t.toDate()[Y].apply(t.toDate("s"),(i?[0,0,0,0]:[23,59,59,999]).slice(g)),t)},m=this.$W,v=this.$M,D=this.$D,H="set"+(this.$u?"UTC":"");switch(u){case w:return i?c(1,0):c(31,11);case p:return i?c(1,v):c(0,v+1);case P:var E=this.$locale().weekStart||0,F=(m<E?m+7:m)-E;return c(i?D-F:D+(6-F),v);case b:case T:return l(H+"Hours",0);case k:return l(H+"Minutes",1);case h:return l(H+"Seconds",2);case x:return l(H+"Milliseconds",3);default:return this.clone()}},r.endOf=function(e){return this.startOf(e,!1)},r.$set=function(e,n){var t,i=o.p(e),u="set"+(this.$u?"UTC":""),c=(t={},t[b]=u+"Date",t[T]=u+"Date",t[p]=u+"Month",t[w]=u+"FullYear",t[k]=u+"Hours",t[h]=u+"Minutes",t[x]=u+"Seconds",t[M]=u+"Milliseconds",t)[i],l=i===b?this.$D+(n-this.$W):n;if(i===p||i===w){var m=this.clone().set(T,1);m.$d[c](l),m.init(),this.$d=m.set(T,Math.min(this.$D,m.daysInMonth())).$d}else c&&this.$d[c](l);return this.init(),this},r.set=function(e,n){return this.clone().$set(e,n)},r.get=function(e){return this[o.p(e)]()},r.add=function(e,n){var t,i=this;e=Number(e);var u=o.p(n),c=function(v){var D=f(i);return o.w(D.date(D.date()+Math.round(v*e)),i)};if(u===p)return this.set(p,this.$M+e);if(u===w)return this.set(w,this.$y+e);if(u===b)return c(1);if(u===P)return c(7);var l=(t={},t[h]=_,t[k]=y,t[x]=O,t)[u]||1,m=this.$d.getTime()+e*l;return o.w(m,this)},r.subtract=function(e,n){return this.add(-1*e,n)},r.format=function(e){var n=this,t=this.$locale();if(!this.isValid())return t.invalidDate||s;var i=e||"YYYY-MM-DDTHH:mm:ssZ",u=o.z(this),c=this.$H,l=this.$m,m=this.$M,v=t.weekdays,D=t.months,H=t.meridiem,E=function(g,C,W,V){return g&&(g[C]||g(n,i))||W[C].slice(0,V)},F=function(g){return o.s(c%12||12,g,"0")},Y=H||function(g,C,W){var V=g<12?"AM":"PM";return W?V.toLowerCase():V};return i.replace(B,(function(g,C){return C||(function(W){switch(W){case"YY":return String(n.$y).slice(-2);case"YYYY":return o.s(n.$y,4,"0");case"M":return m+1;case"MM":return o.s(m+1,2,"0");case"MMM":return E(t.monthsShort,m,D,3);case"MMMM":return E(D,m);case"D":return n.$D;case"DD":return o.s(n.$D,2,"0");case"d":return String(n.$W);case"dd":return E(t.weekdaysMin,n.$W,v,2);case"ddd":return E(t.weekdaysShort,n.$W,v,3);case"dddd":return v[n.$W];case"H":return String(c);case"HH":return o.s(c,2,"0");case"h":return F(1);case"hh":return F(2);case"a":return Y(c,l,!0);case"A":return Y(c,l,!1);case"m":return String(l);case"mm":return o.s(l,2,"0");case"s":return String(n.$s);case"ss":return o.s(n.$s,2,"0");case"SSS":return o.s(n.$ms,3,"0");case"Z":return u}return null})(g)||u.replace(":","")}))},r.utcOffset=function(){return 15*-Math.round(this.$d.getTimezoneOffset()/15)},r.diff=function(e,n,t){var i,u=this,c=o.p(n),l=f(e),m=(l.utcOffset()-this.utcOffset())*_,v=this-l,D=function(){return o.m(u,l)};switch(c){case w:i=D()/12;break;case p:i=D();break;case I:i=D()/3;break;case P:i=(v-m)/6048e5;break;case b:i=(v-m)/864e5;break;case k:i=v/y;break;case h:i=v/_;break;case x:i=v/O;break;default:i=v}return t?i:o.a(i)},r.daysInMonth=function(){return this.endOf(p).$D},r.$locale=function(){return R[this.$L]},r.locale=function(e,n){if(!e)return this.$L;var t=this.clone(),i=U(e,n,!0);return i&&(t.$L=i),t},r.clone=function(){return o.w(this.$d,this)},r.toDate=function(){return new Date(this.valueOf())},r.toJSON=function(){return this.isValid()?this.toISOString():null},r.toISOString=function(){return this.$d.toISOString()},r.toString=function(){return this.$d.toUTCString()},a})(),re=z.prototype;return f.prototype=re,[["$ms",M],["$s",x],["$m",h],["$H",k],["$W",b],["$M",p],["$y",w],["$D",T]].forEach((function(a){re[a[1]]=function(r){return this.$g(r,a[0],a[1])}})),f.extend=function(a,r){return a.$i||(a(r,z,f),a.$i=!0),f},f.locale=U,f.isDayjs=Q,f.unix=function(a){return f(1e3*a)},f.en=R[q],f.Ls=R,f.p={},f}))})(J)),J.exports}var ce=oe();const de=se(ce),le=({formData:j,fields:L,buttons:O=[],title:_,colCount:y=2,styles:M,className:x=""})=>{const[h,k]=N.useState(j),[b,P]=N.useState({}),p=(s,d)=>{k(B=>({...B,[s]:d}))},I=()=>{const s={};return L.forEach(d=>{d.required&&!h[d.name]&&(s[d.name]="Bắt buộc nhập")}),P(s),Object.keys(s).length===0},w=s=>{s.onClick&&I()&&s.onClick(h)},T=`repeat(${y}, 1fr)`;return $.jsxs("div",{className:`border p-4 rounded-md bg-white ${x}`,style:M,children:[$.jsx("h3",{className:"font-bold text-green-700 mb-3",children:_}),$.jsx("div",{className:"grid gap-4",style:{gridTemplateColumns:T},children:L.map(s=>$.jsxs("div",{className:"flex flex-col",children:[$.jsxs("label",{className:"font-semibold mb-1 text-left",children:[s.label," ",s.required&&$.jsx("span",{className:"text-red-500",children:"*"})]}),s.type==="text"&&$.jsx("input",{...s.fieldProps,type:"text",className:`border rounded p-2 ${s.fieldProps?.className??""}`,value:h[s.name]??"",onChange:d=>p(s.name,d.target.value)}),s.type==="textarea"&&$.jsx("textarea",{...s.fieldProps,className:`border rounded p-2 resize-none ${s.fieldProps?.className??""}`,value:h[s.name]??"",onChange:d=>p(s.name,d.target.value)}),s.type==="select"&&$.jsxs("select",{...s.fieldProps,className:`border rounded p-2 ${s.fieldProps?.className??""}`,value:h[s.name]??"",onChange:d=>p(s.name,d.target.value),children:[$.jsx("option",{value:"",children:"-- Chọn --"}),s.options?.map(d=>$.jsx("option",{value:d.value,children:d.label},d.value))]}),s.type==="date"&&$.jsx("input",{...s.fieldProps,type:"date",className:`border rounded p-2 ${s.fieldProps?.className??""}`,value:h[s.name]?de(h[s.name]).format("YYYY-MM-DD"):"",onChange:d=>p(s.name,d.target.value)}),b[s.name]&&$.jsx("span",{className:"text-red-500 text-sm mt-1",children:b[s.name]})]},s.name))}),$.jsx("div",{className:"mt-4 flex gap-3",children:O.map((s,d)=>$.jsx("button",{className:`px-4 py-2 rounded ${s.type==="primary"?"bg-green-600 text-white":s.type==="danger"?"bg-red-500 text-white":"bg-gray-200"}`,onClick:()=>w(s),children:s.label},d))})]})},he={name:"Phạm Phú Tân",position:"Nhân viên",gender:"Nam","birth day":"13/04/1978"},fe=()=>(console.log(he),$.jsx("div",{style:{width:"30vw",height:"20vh",background:"#ccc",padding:20,margin:"10%",border:"1px solid #ccc"},children:$.jsx("h1",{children:"WELCOME TO THE WORLD!!!"})}));S.React=N,S.ReactDOM=ne,S.CustomForm=le,S.Modal01=fe,Object.defineProperty(S,Symbol.toStringTag,{value:"Module"})}));
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("react"), require("react-dom")) : typeof define === "function" && define.amd ? define(["exports", "react", "react-dom"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.MFECore = {}, global.React, global.ReactDOM));
+})(this, (function(exports2, react, reactDom) {
+  "use strict";
+  var jsxRuntime = { exports: {} };
+  var reactJsxRuntime_production = {};
+  /**
+   * @license React
+   * react-jsx-runtime.production.js
+   *
+   * Copyright (c) Meta Platforms, Inc. and affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+  var hasRequiredReactJsxRuntime_production;
+  function requireReactJsxRuntime_production() {
+    if (hasRequiredReactJsxRuntime_production) return reactJsxRuntime_production;
+    hasRequiredReactJsxRuntime_production = 1;
+    var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
+    function jsxProd(type, config, maybeKey) {
+      var key = null;
+      void 0 !== maybeKey && (key = "" + maybeKey);
+      void 0 !== config.key && (key = "" + config.key);
+      if ("key" in config) {
+        maybeKey = {};
+        for (var propName in config)
+          "key" !== propName && (maybeKey[propName] = config[propName]);
+      } else maybeKey = config;
+      config = maybeKey.ref;
+      return {
+        $$typeof: REACT_ELEMENT_TYPE,
+        type,
+        key,
+        ref: void 0 !== config ? config : null,
+        props: maybeKey
+      };
+    }
+    reactJsxRuntime_production.Fragment = REACT_FRAGMENT_TYPE;
+    reactJsxRuntime_production.jsx = jsxProd;
+    reactJsxRuntime_production.jsxs = jsxProd;
+    return reactJsxRuntime_production;
+  }
+  var hasRequiredJsxRuntime;
+  function requireJsxRuntime() {
+    if (hasRequiredJsxRuntime) return jsxRuntime.exports;
+    hasRequiredJsxRuntime = 1;
+    {
+      jsxRuntime.exports = requireReactJsxRuntime_production();
+    }
+    return jsxRuntime.exports;
+  }
+  var jsxRuntimeExports = requireJsxRuntime();
+  const FORM_DATA = {
+    "name": "Phạm Phú Tân",
+    "position": "Nhân viên",
+    "gender": "Nam",
+    "birth day": "13/04/1978"
+  };
+  const Modal01 = () => {
+    console.log(FORM_DATA);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "30vw", height: "20vh", background: "#ccc", padding: 20, margin: "10%", border: "1px solid #ccc" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "WELCOME TO THE WORLD!!!" }) });
+  };
+  exports2.React = react;
+  exports2.ReactDOM = reactDom;
+  exports2.Modal01 = Modal01;
+  Object.defineProperty(exports2, Symbol.toStringTag, { value: "Module" });
+}));

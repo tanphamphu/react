@@ -22,7 +22,7 @@ export default defineConfig({
             }
         },
         sourcemap: false,
-        minify: true,
+        minify: false,
     },
     define: {
         'process.env.NODE_ENV': '"production"',
