@@ -1,6 +1,6 @@
 (function(global, factory) {
   typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("react"), require("react-dom")) : typeof define === "function" && define.amd ? define(["exports", "react", "react-dom"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.MFECore = {}, global.React, global.ReactDOM));
-})(this, (function(exports2, react, reactDom) {
+})(this, (function(exports2, React, ReactDOM) {
   "use strict";
   var jsxRuntime = { exports: {} };
   var reactJsxRuntime_production = {};
@@ -51,18 +51,13 @@
     return jsxRuntime.exports;
   }
   var jsxRuntimeExports = requireJsxRuntime();
-  const FORM_DATA = {
-    "name": "Phạm Phú Tân",
-    "position": "Nhân viên",
-    "gender": "Nam",
-    "birth day": "13/04/1978"
-  };
   const Modal01 = () => {
-    console.log(FORM_DATA);
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "30vw", height: "20vh", background: "#ccc", padding: 20, margin: "10%", border: "1px solid #ccc" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "WELCOME TO THE WORLD!!!" }) });
   };
-  exports2.React = react;
-  exports2.ReactDOM = reactDom;
+  const index = { React, ReactDOM, Modal01 };
+  exports2.React = React;
+  exports2.ReactDOM = ReactDOM;
   exports2.Modal01 = Modal01;
-  Object.defineProperty(exports2, Symbol.toStringTag, { value: "Module" });
+  exports2.default = index;
+  Object.defineProperties(exports2, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
 }));
